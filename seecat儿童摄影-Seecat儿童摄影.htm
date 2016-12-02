@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<title>seecat儿童摄影-Seecat儿童摄影</title>
+	<meta name="keywords" content="关键词1,关键词2,关键词3">
+	<meta name="description" content="seecat儿童摄影-Seecat儿童摄影">
+	<meta http-equiv="Cache-Control" content="no-transform">
+		<link href="http://cdn033.yun-img.com/static/upload/ccfox/system/20160321111921_31607.png" rel="shortcut icon">
+	<link href="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/modules.css" rel="stylesheet" type="text/css">
+	<link href="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/common.css" rel="stylesheet" type="text/css">
+	<link href="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/style.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+	.g-main{ width:1206px }
+	.g-hd-inner{ width:1206px }
+	.g-ft-inner{ width:1206px }
+	</style>
+		<script src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/jquery_003.js"></script>
+	<script type="text/javascript" src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/jquery.js"></script>
+	<script type="text/javascript" src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/jquery_002.js"></script>
+	<script type="text/javascript">
+		var WEB_ROOT = 'http://seecat.cc';
+		$(function() {
+			$("img.lazyload").lazyload({failure_limit:200, effect:"fadeIn"});
+		});
+	</script>
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js?v=201504071709"></script>
+	<![endif]-->
+	<!-- 加载IE6对PNG图片透明的支持 -->
+	<!--[if IE 6]>
+	<script src="http://cdn.bootcss.com/dd_belatedpng/0.0.8/dd_belatedpng.min.js"></script>
+	<![endif]-->
+	
+	<!-- 首部功能插件 end -->
+<link type="text/css" rel="stylesheet" href="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/layer.css" id="skinlayercss"></head>
+<body>
+<!-- 头部插件注入区 -->
+<script type="text/javascript" src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/layer.js"></script>
+<script type="text/javascript">
+function LoginSign(url){
+	$.layer({
+		type : 2,
+		title: '用户登陆',
+		shadeClose: false,
+		maxmin: false,
+		fix : true,
+		fadeIn: 500,
+		area: ['600px', '350px'], 
+		iframe: {
+			src : url
+		}
+	});
+}
+$(document).ready(function(){
+	/* 设为首页*/
+	$('#set_startpage').click(function(){
+		var url = window.location;
+		try{ 
+			this.style.behavior='url(#default#homepage)';
+			this.setHomePage(url); 
+		}catch(e){ 
+			if(window.netscape) { 
+				try { 
+					netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
+				}catch (e) { 
+					layer.alert("此操作被浏览器拒绝！<br />请在浏览器地址栏输入“about:config”并回车<br />然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。", 8);
+				}
+				var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch); 
+				prefs.setCharPref('browser.startup.homepage',url); 
+			}else{
+				layer.alert("您的浏览器不支持，请按照下面步骤操作：<br /> 1.打开浏览器设置。<br />2.点击设置网页。<br />3.输入："+url, 8);
+			}
+		}
+	});
+
+	/* 收藏本站 */
+	$('#set_favorite').click(function(){
+		if(document.all){
+			window.external.addFavorite(window.location, $(document).attr("title"));
+		}else if(window.sidebar){
+			window.sidebar.addPanel($(document).attr("title"),window.location, "");
+		}else{
+			layer.alert("很抱歉，您的浏览器不支持此操作。<br />请使用按键Ctrl+D收藏本站。", 8);
+		}
+	});
+
+	/* 简繁转换 */
+	$('#set_translation').click(function(){
+		$.post("/ajax/common.php", 
+			{action : "locale"},
+			function(data){
+				if(data=='1'){
+					location.reload();        
+				}
+			}
+		);
+	});
+
+	/* 用户登陆 */
+	$('#set_login,#set_login_fx').click(function(){
+		LoginSign("/account/logined.php");
+		return false;
+	});
+
+	/* 用户注册 */
+	$('#set_register,#set_register2').click(function(){
+		$.layer({
+				type : 2,
+				title: '用户注册',
+				shadeClose: false,
+				maxmin: false,
+				fix : true,
+				fadeIn: 500,
+				area: ['600px', '580px'], 
+				iframe: {
+					src : '/account/signupes.php'
+				} 
+			});
+			return false;
+	});
+
+	/* 添加新地址 */
+	$('a.LogLink').click(function(){
+		$.layer({
+				type : 2,
+				title: '添加新地址',
+				shadeClose: false,
+				maxmin: false,
+				fix : true,
+				fadeIn: 500,
+				area: ['600px', '350px'], 
+				iframe: {
+					src : '/account/ajax.php?action=shopinsertes'
+				} 
+			});
+			return false;
+	});
+	/* 搜索 */
+
+	//给文本框添加失去焦点事件，检索用户是否输入了数据
+	$('#set_search .u-search-key').blur(function(){
+		var wordText = $(this).val();
+		if('' == wordText){
+			wordText = '请输入搜索内容';
+			$(this).val(wordText);
+		}
+	});
+	//给文本框添加获取焦点事件
+	$('#set_search .u-search-key').focus(function(){
+		var wordText = $(this).val();
+		if('请输入搜索内容' == wordText){
+			wordText = '';
+			$(this).val(wordText);
+		}
+	});
+	
+	//过滤文本的特殊字符
+	function stripscript(s){ 
+		var pattern = new RegExp("[`.~!@#$^/]"); 
+		var rs = ""; 
+		for (var i = 0; i < s.length; i++) { 
+			rs = rs+s.substr(i, 1).replace(pattern, ''); 
+		} 
+		return rs; 
+	};
+
+	//给按钮“查询”添加事件，表示文本框的内容被提交
+	$('#set_search .u-search-btn').click(function(){
+		var search_text = stripscript($("#set_search .u-search-key").val());
+		window.location.href = '/search.php?s='+encodeURI(search_text);
+	});
+
+	/* 初始化宽度 */
+	var MainDocumentWidth = '1206';
+	if(MainDocumentWidth!=""){
+		if(MainDocumentWidth>$(window).width()){
+			$('.g-document').width(MainDocumentWidth);
+		}
+	}
+});
+</script>
+
+<style>
+		.g-hd-outer{
+		background: url("http://cdn033.yun-img.com/static/upload/ccfox/focus/20160318083400_38563.png")  scroll;
+	}
+</style>
+
+<link rel="stylesheet" type="text/css" href="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/sDt_zaixan_cart.css">
+<style type="text/css">
+* html{background-image:url(about:blank);background-attachment:fixed;}
+.tool-wrap{z-index: 90000; position: fixed; right: 0px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+ (parseInt(this.currentStyle.marginTop,10)||130)));}
+.sDt_float-tool .tool-list,.sDt_float-tool .child-list{margin:0px; padding:0px;}
+.sDt_float-tool .tool-list li.sDt_box {position: relative;}
+.sDt_float-tool .tool-list li{ text-align:center; width:38px; padding:5px 0;list-style-type:none}
+.sDt_float-tool .tool-list li .asies_nav{ display:block; width:38px; text-align:center; overflow:hidden; text-decoration:none;}
+.tool-wrap .link-top{ display:none;}
+
+
+</style>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#float-tool-close").click(function() {
+        $("#float-toolLes_fix").hide();
+        $(".sDt_float-tool-mini").show();
+    });
+    $(".sDt_float-tool-mini").click(function(){
+        $("#float-toolLes_fix").show();
+        $(".sDt_float-tool-mini").hide();
+        
+    });
+    $("#commun-zaix").hover(function() {
+            $(this).find("div.commun_div").show();
+        },function() {
+            $(this).find("div.commun_div").hide();
+    });
+    $(window).scroll(function(){
+        var y = $(document).scrollTop();
+          if(y >= 500){
+                $('#j-roll-btn').show();
+          }else{
+                $('#j-roll-btn').hide();
+          }
+    });
+    $("#j-roll-btn a").click(function() {
+        $("html,body").animate({
+            scrollTop : "0px"
+        }, 100)
+    });
+    //$("div[id^='pop_']")
+    $("a[id^='pop_']").mouseover(function(){
+       // $("#div_id").css("display","block");
+       //alert('over');
+       $(this).siblings().css("display","block");
+    });
+    $("a[id^='pop_']").mouseout(function(){
+       // alert('out');
+        //$("#div_id").css("display","none");
+        $(this).siblings().css("display","none");
+    });
+});
+
+
+</script>
+<div class="tool-wrap">
+    <div id="float-toolLes_fix" class="sDt_float-tool">
+        <div class="link-close">
+            <a id="float-tool-close" href="javascript:void(0);" title="折叠">折叠</a>
+        </div>
+        <ul class="tool-list">
+                                                                           <li class="clearfix type sDt_box chat" style="">
+                    
+                    <a class="asies_nav" id="chkcode" href="javascript:void(0);">
+                    <img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/erwm.png" style="border:none;" width="28px">
+                    <p style="letter-spacing: 1px;font-size: 12px; line-height:15px; margin-top:3px">微信扫码</p>
+                    </a>
+                    
+                    <script type="text/javascript">
+$(document).ready(function() { 
+	$("#chkcode").mouseover(function(){
+		$("#div_id").css("display","block");
+	});
+	$("#chkcode").mouseout(function(){
+		$("#div_id").css("display","none");
+	});
+	
+}); 
+</script>
+
+
+<div id="div_id" style="width: 180px; height: 450px; position: fixed; right: 38px; top: 130px; z-index:9999; display: none">
+
+	<div style="background-color: #FFFFFF; border: 4px solid #8c8c8c; -moz-border-radius: 3px; -webkit-border-radius: 3px;z-index:9999">
+
+
+
+		
+		<div style="background-repeat: repeat; height: 25px; padding-top: 4px; background-color:#8c8c8c; z-index:9999;">
+			<div style="z-index:9999; font-size:18px; letter-spacing:2px; color:#FFFFFF; font-weight:bold;" align="center">微信扫码</div>
+		</div>
+		
+		<div align="center">
+			<img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/20160505223834_83526.jpg" alt="用手机浏览器扫描浏览效果" style="width: 145px; height: 145px;margin-top:15px;margin-bottom:15px">
+		</div>
+		
+
+	</div>
+
+</div>                    
+            </li>
+                                                                          <li class="clearfix type sDt_box chat" style="position:relative;" id="commun-zaix">
+                    
+                    <a class="asies_nav" href="javascript:void(0);">
+                    <img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/side_s01.gif" style="border:none;" width="28px">
+                    <p style="letter-spacing: 1px;font-size: 12px; line-height:15px; margin-top:3px">在线客服</p>
+                    </a>
+                    <style type="text/css">
+.commun_div{ position:absolute; left:-108px; top:-10px;border: 4px solid #8c8c8c; -moz-border-radius: 3px; -webkit-border-radius: 3px;display:none; z-index:99999; background-color:#FFFFFF;}
+.commun_div .title {font-weight: bold;height: 30px;line-height: 30px;text-align: center;overflow: hidden;background: #8c8c8c;font-size:18px; letter-spacing:2px; color:#FFFFFF;}
+.sDt_float-tool .commun_div li a {color: #333;height: 24px; width:100px; display:block;line-height: 24px;overflow: hidden;padding:0;text-align: left;background-repeat: no-repeat;background-position: 10px 50%; text-align:center;}
+.sDt_float-tool .tool-list li .child-list li{ width:100px;overflow:hidden;}
+</style>
+<div class="commun_div">
+	<p class="title" style="width:100px;">客服</p>
+	<ul class="child-list">
+									<li>
+				<p>摄影师  美美</p>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1173176633&amp;site=qq&amp;menu=yes" style="background-image: url(http://wpa.qq.com/pa?p=2:1173176633:41)"></a>
+				</li>
+													</ul>
+
+</div>            </li>
+                                                                          			<li class="cart type sDt_box ">
+                <a class="asies_nav" href="http://seecat.cc/message.php">
+                    <img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/side_s02.gif" style="border:none;" width="28px">
+                    <p style="letter-spacing: 1px;font-size: 12px; line-height:15px;  margin-top:3px">意见反馈</p>
+                </a>
+            </li>
+                                                                                                               			<li class="cart type sDt_box ">
+                <a class="asies_nav" href="http://seecat.cc/order/index.php">
+                    <img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/side_s04.gif" style="border:none;" width="28px">
+                    <p style="letter-spacing: 1px;font-size: 12px; line-height:15px;  margin-top:3px">用户中心</p>
+                </a>
+            </li>
+                                                			<!--{/if}-->
+        </ul>
+    </div>
+    <div class="sDt_float-tool-mini">
+        <div class="clearfix link-open">
+            <a id="float-tool-mini" href="javascript:void(0);" title="展开">展开</a>
+        </div>
+    </div>
+    <div id="j-roll-btn" class="link-top">
+    
+        <a href="javascript:void(0);" title="返回顶部" style="text-indent:inherit;font-size:12px;background:none;padding:10px 0;height:auto;line-height:20px">返回顶部</a>
+    </div>
+    
+</div>
+<script>
+$("#fx_applypc").click(function(){
+	$.layer({
+		type:2,
+		title:'',
+		area:['560px','320px'],
+		offset:['180px',''],
+		iframe:{src:"/account/fenxiao.php?type=fx_apply"}
+	});
+});
+</script><!-- 头部 -->
+<div class="g-document">
+<header class="g-hd">
+<div class="g-hd-outer">
+<div class="g-hd-edit">
+<div class="g-hd-topmenu">
+	<div class="g-hd-inner">
+		<div class="m-hd-top-left">
+						<span id="set_userbox">
+															<a class="u-hd-btn" id="set_login" href="#">登录</a><a class="u-hd-btn f-no-rborder" id="set_register" href="#">注册</a>
+												</span>
+					</div>
+		<div class="m-hd-top-right">
+						<a class="u-hd-btn" href="#" id="set_startpage">设为首页</a>
+									<a class="u-hd-btn" href="#" id="set_favorite">收藏本站</a>
+									<a class="u-hd-btn u-trans f-no-rborder" href="#" id="set_translation">简繁切换</a>
+					</div>
+	</div>
+</div>
+<div class="g-hd-inner g-hd-limit">
+	<!-- 头部980 -->
+		
+		<!-- 头部自定义模块 -->
+				<div class="m-hd-headhtmlwrap" id="set_headhtml">
+			<div class="m-hd-headhtml" style="width:50px;height:50px;top:25px;left:260px;">
+				<div class="m-headhtml-ct"></div>
+			</div>
+		</div>
+				<!-- 头部自定义模块 end -->
+		<!-- LOGO -->
+				<div class="m-logo" style="position:relative;top:0px;left:357px;" id="set_logo">
+			<a href="http://seecat.cc/"><img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/20160317093643_62159.png" alt="" style="width:366px;height:100px;"></a>
+		</div>
+				<!-- LOGO end -->
+		<div class="m-hd-top">
+			
+					</div>
+		<div class="clearing"></div>
+		
+		
+	<!-- 头部980 end -->
+</div>
+</div>
+<div class="clearing"></div>
+
+<div class="m-nav" id="set_menu" style="overflow: visible;">
+<style type="text/css">
+	.m-nav ul{ width:1206px;margin:auto;}
+</style>
+<style class="m-nav-style">
+ /*****判断页面是否需要更改***/
+          .m-nav{
+           background:url(http://cdn033.yun-img.com/static/upload/a00336c/visualtoolkit/20160117152034_21822.png) repeat;                      font-family:inherit;                      }
+           .m-nav ul li a{
+                              font-family:inherit; 
+           }
+                                 
+           .m-nav ul ul li{
+                                 font-family:inherit;              
+           }
+           .m-nav > ul > li > ul li a{
+                      font-family:inherit;           color:#FFFFFF;   
+           }
+                      .m-nav ul ul li a{color:#FFFFFF}
+           .m-nav ul ul li{color:#FFFFFF}
+           .m-nav ul ul li a:hover{color:#FFFFFF}
+                      
+           .doit{}
+           /***********************/
+</style>
+
+	<ul>
+		<!--<li class='u-first'><a href="/">首页</a></li>-->
+							<li>
+						<a href="http://seecat.cc/index.php">首页</a>
+									</li>
+									<li>
+						<a href="http://seecat.cc/about.html">公司简介</a>
+									</li>
+									<li>
+						<a href="http://seecat.cc/product.html">拍摄主题</a>
+									<ul style="display: none;">
+							<li>
+									<a href="http://seecat.cc/product_31660.html">学校主题</a>
+												</li>
+							<li>
+									<a href="http://seecat.cc/product_31472.html">郊游主题</a>
+												</li>
+							<li>
+									<a href="http://seecat.cc/product_31659.html">家庭主题</a>
+												</li>
+							<li>
+									<a href="http://seecat.cc/product_31660.html">生日主题</a>
+												</li>
+							<li>
+									<a href="http://seecat.cc/product_34344.html">日常各方面主题</a>
+												</li>
+						</ul>
+						</li>
+									<li>
+						<a href="http://seecat.cc/question.html">注意事项</a>
+									</li>
+									<li class="">
+						<a href="http://seecat.cc/news.html">新闻中心</a>
+									</li>
+									<li class="">
+						<a href="http://seecat.cc/group.html">服务项目</a>
+									</li>
+									<li class="">
+						<a href="http://seecat.cc/contact.html">预约摄影师</a>
+									</li>
+									<li>
+						<a href="http://seecat.cc/download.html">下载专区</a>
+									</li>
+									<li>
+						<a href="http://seecat.cc/album.html">企业相册</a>
+									</li>
+									<li>
+						<a href="http://seecat.cc/job.html">招聘中心</a>
+									</li>
+					</ul>
+
+</div>
+<div style="clear:both"></div>
+<script type="text/javascript">
+var SYSPAGEURL = window.location.pathname + window.location.search;
+if(SYSPAGEURL=='/index.html' || SYSPAGEURL=='/index.php' || SYSPAGEURL==''){
+	SYSPAGEURL = '/';
+}
+$(document).ready(function(){
+	$('.m-nav').levelmenu();
+	
+	$(".m-nav .select").removeClass('select');
+	$(".m-nav a[href='" + SYSPAGEURL + "']").parent().addClass('select');
+});
+
+$.fn.levelmenu = function(){
+	$(this).css('overflow','visible');
+	var overmax = false;
+	var parent = this;
+	$('>ul>li', this).each(function(){
+		if(overmax){
+			$('<li>'+$(this).html()+'</li>').appendTo($('.more', parent));
+			$(this).remove();
+		}else{
+			if($(this).next().length>0){
+				if($(this).offset().left > $(this).next().offset().left){
+					$('<li><a href="#">更多</a><ul class="more"></ul></li>').appendTo($(">ul", parent));
+					$('.more', parent).addClass('last');
+					$('<li>'+$(this).html()+'</li>').appendTo($('.more', parent));
+					$(this).remove();
+					overmax = true;
+				}
+			}else{
+				if($(this).find('ul ul:first').length>0){
+					$(this).find('ul:first').addClass('last');
+				}
+			}
+		}
+	});
+
+	$("ul ul", this).css({display: "none"});
+	$("ul li", this).hover(
+		function(){
+			$(this).addClass('select').find('ul:first').css({visibility: "visible",display: "none"}).fadeIn(400);
+		},function(){
+			$(this).removeClass('select').find('ul:first').css({visibility: "hidden"});
+			$(".m-nav a[href='" + SYSPAGEURL + "']").parent().addClass('select');
+		}
+	);
+};
+
+
+
+
+</script></div>
+
+<!-- 头部 end1 -->
+<div class="m-focus" id="set_focus">
+	<style type="text/css">
+	.m-focus, .m-focus .bd li, .m-focus .bd li a{height:580px}
+	.m-focus{width:100%;position:relative;}
+	.m-focus .bd{margin:0 auto;position:relative;z-index:0;overflow:hidden;}
+	.m-focus .bd ul{width:100% !important;}
+	.m-focus .bd li{width:100% !important;overflow:hidden;text-align:center;background-repeat:no-repeat; background-position:center 0;}
+	.m-focus .bd li a{display:block;}
+	.m-focus .hd{width:100%;position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px;}
+	.m-focus .hd ul{text-align:center;}
+	.m-focus .hd ul li{cursor:pointer; display:inline-block; *display:inline; zoom:1; width:42px; height:11px; margin:1px; overflow:hidden; background:#000;filter:alpha(opacity=50);opacity:0.5;  line-height:999px; }
+	.m-focus .hd ul .on{background:#f00;}
+	.m-focus .prev,.m-focus .next{display:block;  position:absolute; z-index:1; top:50%; margin-top:-30px; left:15%;  z-index:1; width:40px; height:60px; background:url(/static/theme/common/img/focus/focus1/slider-arrow.png) -126px -137px #000 no-repeat;  cursor:pointer; filter:alpha(opacity=50);opacity:0.5; display:none;  }
+	.m-focus .next{left:auto; right:15%; background-position:-6px -137px;}
+	</style>
+	<div class="bd">
+		<ul style="position: relative; width: 1349px; height: 580px;">
+						<li style="position: absolute; width: 1349px; left: 0px; top: 0px; background-image: url(&quot;http://cdn033.yun-img.com/static/upload/ccfox/focus/20160318090345_30206.jpg&quot;); display: none;">
+						<a target="_blank" href="http://seecat.cc/teamview_275760.html" alt="迷人的小美女"></a>
+						</li>
+						<li style="position: absolute; width: 1349px; left: 0px; top: 0px; background-image: url(&quot;http://cdn033.yun-img.com/static/upload/ccfox/focus/20160318083020_93309.jpg&quot;); display: list-item;">
+						<a target="_blank" href="http://seecat.cc/teamview_275753.html" alt="宝宝开学啦"></a>
+						</li>
+					</ul>
+	</div>
+
+	<div class="hd">
+		<ul><li class="">1</li><li class="on">2</li></ul>
+	</div>
+	<span class="prev" style="opacity: 0.0628875; display: inline;"></span>
+	<span class="next" style="opacity: 0.0628875; display: inline;"></span>
+	<script type="text/javascript">
+		function RunFocus(){
+			jQuery(".m-focus").hover(function(){ jQuery(this).find(".prev,.next").stop(true,true).fadeTo("show",0.5) },function(){ jQuery(this).find(".prev,.next").fadeOut() });
+
+			jQuery(".m-focus").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",  autoPlay:true, autoPage:true, trigger:"click",
+				startFun:function(i){
+					var curLi = jQuery(".m-focus .bd li").eq(i);
+					if( !!curLi.attr("_src") ){
+						curLi.css("background-image",curLi.attr("_src")).removeAttr("_src");
+					}
+				}
+			});
+		}
+		RunFocus();
+	</script>
+</div><!-- 拖拽980 -->
+</header><div class="g-main">
+<!-- 站点公告中心模块 -->
+<div class="m-wg m-default m-default-default" id="visualmodule_10" style="width:1202px;height:733px;float:left;border-style:none;border-width:0px;border-color:#333333;margin-left:0px;margin-right:0px;margin-top:30px;margin-bottom:10px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;">
+			<div class="m-wg-ct">
+		<div class="m-theme28"><style type="text/css">
+.in_c_about{width: 1200px;overflow: hidden;position: relative;height: 728px;}
+.in_c_about img{width: 100%;border: 0;}
+.in_c_bk{width: 296px;height: 31px;border: 2px solid #040000;position: relative;margin: 8px auto;}
+.biaoy_01{width: 180px;height: 24px;line-height: 24px;background: #fff;text-align: center;text-transform: uppercase;font-size: 16px;color: #040000;z-index: 2;overflow: hidden;position: absolute;top: -10px;left: 58px;font-family: "Times New Roman" }
+.biaoy_02{height: 30px;line-height: 30px;width: 120px;overflow: hidden;text-align: center;color: #040000;font-size: 20px;position: absolute;top: 14px;left: 89px;background: #fff;z-index: 2;}
+.about_img01{position: absolute;top: 77px;left: 508px;width: 692px;height: 269px;}
+.about_img02{position: absolute;top: 361px;left: 508px;width:220px;height: 303px; }
+.about_img03{position: absolute;top: 361px;left: 742px;width:133px;height: 130px; }
+.index_cnt_m_about{width:494px;position: absolute;top: 64px;left: 0; }
+.index_about_f{position:relative; width:100%; }
+.index_cnt_m_about_t{position: relative;overflow: hidden;height: 71px;margin-bottom: 79px;width: 494px;}
+.i_about_t1{display: block;height: 38px;line-height: 38px;max-width: 490px;overflow: hidden;color: #333;text-transform: uppercase;position: absolute;top: 33px;left: 0;font-size: 18px;font-family: "微软雅黑"}
+.i_about_t2{display: none; }
+.i_about_t3{display: block;height: 31px;line-height: 31px;max-width: 490px;overflow: hidden;border-bottom: 2px solid #323232;color: #000;position: absolute;top: 0;left: 0;font-size: 18px; }
+.index_cnt_m_about_cnt{width:100%; }
+.i_about_img{width:494px; height:113px;margin-bottom: 111px;}
+.i_about_cnt{height:120px;width: 398px; display:block; word-break: break-all; overflow:hidden; font-size:12px; color:#8f8f8f; line-height:24px;}
+.index_cnt_m_about_more{position:absolute; left:0; top:573px;width: 99px;height: 27px;}
+.index_cnt_m_about_more a{ width:99px; height:27px; display: block; background:url(/static/upload/a00336c/visualtoolkit/20160117142532_63574.png) no-repeat;transition: all 0.3s;}
+.index_cnt_m_about_more a:hover{ width:99px; height:27px;background:url(/static/upload/a00336c/visualtoolkit/20160117142633_86044.png) no-repeat;}
+.in_cpro{width: 100%;position: relative;margin-bottom: 56px;overflow: hidden;}
+.in_c_news{width: 100%;position: relative;height: 609px;overflow: hidden;}
+.index_c_img{width: 100%;height: 382px;position: relative;margin-bottom: 64px;overflow: hidden;}
+.index_c_img img{width: 100%;height: 382px;}
+.index_c_al{width: 100%;position: relative;height: 480px;margin-bottom:69px;overflow: hidden;}
+/*end_index_cnt_m_about*/
+</style>
+<div class="in_c_about">
+	<div class="in_c_bk">
+		<div class="biaoy_01">
+			<!--ea_span_biaoy_01--><span name="_biaoy_01">about us</span><!--ea_span_biaoy_01-->
+		</div>
+		<div class="biaoy_02">
+			<!--ea_span_biaoy_02--><span name="_biaoy_02">关于我们</span><!--ea_span_biaoy_02-->
+		</div>
+	</div>
+	<div class="about_img01">
+		<img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/20160318091706_74902.jpg" alt=""> 
+	</div>
+	<div class="about_img02">
+		<img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/20160318091900_84340.jpg" alt=""> 
+	</div>
+	<div class="about_img03">
+		<img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/20160318092245_28406.jpg" alt=""> 
+	</div>
+<!--index_cnt_m_about-->
+	<div id="index_cnt_m_about" class="index_cnt_m_about">
+		<!--首页通用关于我们开始 -->
+		<div class="index_about_f">
+			<div class="index_cnt_m_about_t">
+				<span class="i_about_t1"> <!--ea_span701--> <span name="701">About</span> <!--ea_span701--> </span><span class="i_about_t2"> <!--ea_span702--> <span name="702">/</span> <!--ea_span702--> </span><span class="i_about_t3"> <!--ea_span703--> <span name="703">关于看见小猫儿童摄影</span></span> 
+			</div>
+			<div class="index_cnt_m_about_cnt">
+				<img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/20160318091051_87661.jpg" alt=""> <span class="i_about_cnt" ej="edit_span"><br>
+看见小猫儿童摄影专注于儿童的日常生活最真实状态的摄影，他并不是刻意的摆拍，而是真情的流露，生活的每一个角落，每一个瞬间都是我们的场景，真实而富有情感的记录宝贝感动的瞬间。<br>
+</span> 
+			</div>
+			<div class="index_cnt_m_about_more">
+				<a href="http://seecat.cc/about.html"></a> 
+			</div>
+		</div>
+<!--首页通用关于我们结束 -->
+	</div>
+<!--end_index_cnt_m_about-->
+</div></div>
+	</div>
+</div>
+<!-- 模块 end  duangou--><!-- 站点公告中心模块 -->
+<div class="m-wg m-default m-default-default" id="visualmodule_11" style="width:1202px;height:59px;float:left;border-style:none;border-width:0px;border-color:#333333;margin-left:0px;margin-right:0px;margin-top:20px;margin-bottom:10px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;">
+			<div class="m-wg-ct">
+		<div class="m-theme28"><style type="text/css">
+.in_c_bk{width: 296px;height: 31px;border: 2px solid #040000;position: relative;margin: 8px auto;}
+.biaoy_01{width: 180px;height: 24px;line-height: 24px;background: #fff;text-align: center;text-transform: uppercase;font-size: 16px;color: #040000;z-index: 2;overflow: hidden;position: absolute;top: -10px;left: 58px;font-family: "Times New Roman" }
+.biaoy_02{height: 30px;line-height: 30px;width: 120px;overflow: hidden;text-align: center;color: #040000;font-size: 20px;position: absolute;top: 14px;left: 89px;background: #fff;z-index: 2;}
+</style>
+<div class="in_c_bk">
+	<div class="biaoy_01">
+		<!--ea_span_biaoy_01--><span name="_biaoy_01">products</span><!--ea_span_biaoy_01-->
+	</div>
+	<div class="biaoy_02">
+		<!--ea_span_biaoy_02--><span name="_biaoy_02">产品展示</span><!--ea_span_biaoy_02-->
+	</div>
+</div></div>
+	</div>
+</div>
+<!-- 模块 end  duangou--><!-- 模块 -->
+<div class="m-wg m-default m-default-default" id="visualmodule_12" style="width:1205px;height:545px;float:left;border-style:none;border-width:0px;border-color:#333333;margin-left:0px;margin-right:0px;margin-top:20px;margin-bottom:10px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;">
+			<div class="m-wg-ct">
+		<!-- 图片栏目 -->
+		<div class="m-theme75">
+			<div class="clearing">&nbsp;</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275753.html" target="_blank">宝宝开学啦</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275753.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317103320_37546.jpg" alt="宝宝开学啦" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275751.html" target="_blank">小天鹅的舞蹈课</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275751.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317103604_95789.jpg" alt="小天鹅的舞蹈课" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275755.html" target="_blank">放学啦</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275755.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317102833_33212.jpg" alt="放学啦" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275756.html" target="_blank">森林小精灵</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275756.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317102453_84335.jpg" alt="森林小精灵" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275754.html" target="_blank">开心郊游</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275754.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317103026_80260.jpg" alt="开心郊游" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275757.html" target="_blank">我去踏青</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275757.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317100930_79891.jpg" alt="我去踏青" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275760.html" target="_blank">妈妈送我一本书</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275760.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317101820_96461.jpg" alt="妈妈送我一本书" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275759.html" target="_blank">一个金灿灿的下午</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275759.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317102135_97612.jpg" alt="一个金灿灿的下午" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275761.html" target="_blank">本公主家里的一天</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275761.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317101433_53050.jpg" alt="本公主家里的一天" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275758.html" target="_blank">暖冬</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275758.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317102343_39718.jpg" alt="暖冬" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275752.html" target="_blank">我是家里小公主</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275752.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160317103501_54446.jpg" alt="我是家里小公主" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="m-theme75-list">
+				<div class="m-theme75-title">
+					<a href="http://seecat.cc/teamview_275749.html" target="_blank">花仙子</a>
+				</div>
+				<div class="m-theme75-img">
+					<a href="http://seecat.cc/teamview_275749.html" target="_blank">
+						<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/team/20160406103845_12532.jpg" alt="花仙子" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+					</a>
+				</div>
+				
+			</div>
+						<div class="clearing">&nbsp;</div>
+		</div>
+		<!-- 图片栏目 end -->
+	</div>
+</div>
+<!-- 模块 end  duangou--><!-- 站点公告中心模块 -->
+<div class="m-wg m-default m-default-default" id="visualmodule_13" style="width:1203px;height:240px;float:left;border-style:none;border-width:0px;border-color:#333333;margin-left:0px;margin-right:0px;margin-top:20px;margin-bottom:10px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;">
+			<div class="m-wg-ct">
+		<div class="m-theme28"><div style="text-align:center;">
+	<a href="http://www.seecat.cc/newsdetail_149794.html" target="_blank"><img src="seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1-Seecat%E5%84%BF%E7%AB%A5%E6%91%84%E5%BD%B1_files/20160407113650_96151.jpg" alt="" style="line-height:1.5;"></a> 
+</div></div>
+	</div>
+</div>
+<!-- 模块 end  duangou--><!-- 站点公告中心模块 -->
+<div class="m-wg m-default m-default-default" id="visualmodule_14" style="width:1203px;height:62px;float:left;border-style:none;border-width:0px;border-color:#333333;margin-left:0px;margin-right:0px;margin-top:20px;margin-bottom:10px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;">
+			<div class="m-wg-ct">
+		<div class="m-theme28"><style type="text/css">
+.in_c_bk{width: 296px;height: 31px;border: 2px solid #040000;position: relative;margin: 8px auto;}
+.biaoy_01{width: 180px;height: 24px;line-height: 24px;background: #fff;text-align: center;text-transform: uppercase;font-size: 16px;color: #040000;z-index: 2;overflow: hidden;position: absolute;top: -10px;left: 58px;font-family: "Times New Roman" }
+.biaoy_02{height: 30px;line-height: 30px;width: 120px;overflow: hidden;text-align: center;color: #040000;font-size: 20px;position: absolute;top: 14px;left: 89px;background: #fff;z-index: 2;}
+</style>
+<div class="in_c_bk">
+	<div class="biaoy_01">
+		<!--ea_span_biaoy_01--><span name="_biaoy_01">NEWS INFORMATION</span><!--ea_span_biaoy_01-->
+	</div>
+	<div class="biaoy_02">
+		<!--ea_span_biaoy_02--><span name="_biaoy_02">新闻资讯</span><!--ea_span_biaoy_02-->
+	</div>
+</div></div>
+	</div>
+</div>
+<!-- 模块 end  duangou--><div class="m-wg m-default m-default-default" id="visualmodule_16" style="width:400px;height:326px;float:left;border-style:none;border-width:0px;border-color:#333333;margin-left:0px;margin-right:0px;margin-top:20px;margin-bottom:10px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;">
+			<div class="m-wg-ct">
+		<!-- 图片简介栏目 -->
+		<div class="m-theme78">
+			<ul>
+									<li>
+					<div class="m-theme78-title">
+							<a href="http://seecat.cc/newsdetail_149794.html" target="_blank">亚恒活动照片专区</a>
+						</div>				
+					<div class="m-theme78-img">
+						<a href="http://seecat.cc/newsdetail_149794.html" target="_blank">
+							<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/news/20160407144809_99267.jpg" alt="亚恒活动照片专区" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						</a>
+					</div>
+					<div class="m-theme78-content">
+						
+						<div class="m-theme78-txt">
+						<a href="http://seecat.cc/newsdetail_149794.html" target="_blank">
+						
+	
+ 
+
+
+	亚恒活动照片下载 
+
+
+	
+ 
+
+
+	此...
+						</a>
+						</div>
+					</div>
+				</li>
+									<li>
+					<div class="m-theme78-title">
+							<a href="http://seecat.cc/newsdetail_149647.html" target="_blank">5招定格宝贝最美瞬间</a>
+						</div>				
+					<div class="m-theme78-img">
+						<a href="http://seecat.cc/newsdetail_149647.html" target="_blank">
+							<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/news/20160407120932_68247.jpg" alt="5招定格宝贝最美瞬间" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						</a>
+					</div>
+					<div class="m-theme78-content">
+						
+						<div class="m-theme78-txt">
+						<a href="http://seecat.cc/newsdetail_149647.html" target="_blank">
+						
+	5招定格宝贝最美瞬间
+
+
+	
+
+
+
+	&nbsp;一、选择一...
+						</a>
+						</div>
+					</div>
+				</li>
+								</ul>
+			<div class="clearing">&nbsp;</div>
+		</div>
+		<!-- 图片简介栏目 end -->
+	</div>
+</div><div class="m-wg m-default m-default-default" id="visualmodule_15" style="width:797px;height:395px;float:left;border-style:none;border-width:0px;border-color:#333333;margin-left:0px;margin-right:0px;margin-top:20px;margin-bottom:10px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;">
+			<div class="m-wg-ct">
+		<!-- 图片简介栏目 -->
+		<div class="m-theme82">
+			<ul>
+																<li class="first">
+					<div class="m-theme82-img">
+						<a href="http://seecat.cc/newsdetail_149794.html" target="_blank">
+							<img class="lazyload" data-original="http://cdn033.yun-img.com/static/upload/ccfox/news/20160407144809_99267.jpg" alt="亚恒活动照片专区" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						</a>
+					</div>
+					<p class="m-theme82-title">
+							<a href="http://seecat.cc/newsdetail_149794.html" target="_blank">亚恒活动照片专区</a>
+					</p>				
+				</li>
+																					<li>
+					<div class="m-theme82-title">
+						<a href="http://seecat.cc/newsdetail_149647.html" target="_blank">5招定格宝贝最美瞬间</a>
+					</div>
+					<div class="m-theme82-content">
+						<div class="m-theme82-txt">
+							<a href="http://seecat.cc/newsdetail_149647.html" target="_blank">
+							
+	5招定格宝贝最美瞬间
+
+
+	
+
+
+
+	&nbsp;一、选择一个独特的视角 
+还在“机械式”地咔嚓下一堆旅游纪念照吗？放弃固有的拍摄思维，不要只会为宝贝拍摄“到此一游”式的全身、半身照，选择一个独特的视角，让你足不出户，就
+能拍摄到完美的照片。 成长的记忆 5步定格宝贝最美瞬间 
+要学会对取景框里的景物进行取舍，是让被摄体充满画面呢，还是让画面保持一种空灵的感觉。在取景构图的时候，转换一下取景角度或拍摄的视角，这也会有助于
+你摆脱快照模式，踏上你独特的摄影创意之旅。
+
+
+	&nbsp;二、放轻松，边玩边拍 不要只会在相机后，让宝贝冲着相机“笑一笑”、“乐一个”，这样永远不会捕捉							</a>
+						</div>
+					</div>				
+				</li>
+																					<li>
+					<div class="m-theme82-title">
+						<a href="http://seecat.cc/newsdetail_149554.html" target="_blank">拍摄注意事项</a>
+					</div>
+					<div class="m-theme82-content">
+						<div class="m-theme82-txt">
+							<a href="http://seecat.cc/newsdetail_149554.html" target="_blank">
+							拍摄服务
+可免费加拍全家福{限3人超出人数50元一张}
+温馨提示：如宝宝当日状态不好，可择日补拍
+服装造型（自带服装）&nbsp;
+资深摄影师拍摄120全送
+精选修43片
+拍摄成品
+（注：相册实际尺寸可能根据摄影构图有轻微调整）
+8x10韩版烫金相册1本（精修设计25张）
+掌中宝相册1本（精修12张入册）
+16x20寸豪华框1幅
+超片入册20元/张
+本套餐只限一个宝宝拍摄 （例如：2个宝宝按2个套餐计算）
+
+
+联系方式：罗先生153-3882-8225							</a>
+						</div>
+					</div>				
+				</li>
+																					<li>
+					<div class="m-theme82-title">
+						<a href="http://seecat.cc/newsdetail_131053.html" target="_blank">我们提供APP手机客户端, 赶快下载我们的app吧</a>
+					</div>
+					<div class="m-theme82-content">
+						<div class="m-theme82-txt">
+							<a href="http://seecat.cc/newsdetail_131053.html" target="_blank">
+							我们有手机APP请联系网站管理员获取。							</a>
+						</div>
+					</div>				
+				</li>
+																					<li>
+					<div class="m-theme82-title">
+						<a href="http://seecat.cc/newsdetail_131052.html" target="_blank">我们提供微信活动大转盘,刮刮卡,砸金蛋</a>
+					</div>
+					<div class="m-theme82-content">
+						<div class="m-theme82-txt">
+							<a href="http://seecat.cc/newsdetail_131052.html" target="_blank">
+							我们有刮刮卡、砸金蛋等微信活动，赶快关注我们的微信公众号！							</a>
+						</div>
+					</div>				
+				</li>
+																					<li>
+					<div class="m-theme82-title">
+						<a href="http://seecat.cc/newsdetail_131051.html" target="_blank">我们提供贵宾卡功能, 会员有折扣哦</a>
+					</div>
+					<div class="m-theme82-content">
+						<div class="m-theme82-txt">
+							<a href="http://seecat.cc/newsdetail_131051.html" target="_blank">
+							您可以在微信上领取的贵宾卡，贵宾卡在线下可以实现签到积分、消费积分、使用会员特权、积分兑换礼品，在线上也能实现打折、积分。							</a>
+						</div>
+					</div>				
+				</li>
+																					<li>
+					<div class="m-theme82-title">
+						<a href="http://seecat.cc/newsdetail_131050.html" target="_blank">我们提供产品询价服务, 马上联系我</a>
+					</div>
+					<div class="m-theme82-content">
+						<div class="m-theme82-txt">
+							<a href="http://seecat.cc/newsdetail_131050.html" target="_blank">
+							我们网站也可以对非在线交易的商品的询价。							</a>
+						</div>
+					</div>				
+				</li>
+																					<li>
+					<div class="m-theme82-title">
+						<a href="http://seecat.cc/newsdetail_131049.html" target="_blank">我们定期提供秒杀活动,也叫闪购</a>
+					</div>
+					<div class="m-theme82-content">
+						<div class="m-theme82-txt">
+							<a href="http://seecat.cc/newsdetail_131049.html" target="_blank">
+							我们会定期举办秒杀活动，请密切留意我们的网站!							</a>
+						</div>
+					</div>				
+				</li>
+												</ul>
+			<div class="clearing">&nbsp;</div>
+		</div>
+		<!-- 图片简介栏目 end -->
+	</div>
+</div><div class="g-main-clear" style="clear:both"></div>
+</div>
+<!-- 拖拽980 -->
+<!-- 脚部 -->
+<footer class="g-ft g-ft-edit">
+	<!-- 脚部980 -->
+	<div class="g-ft-inner">
+		<!-- 脚部自定义模块 -->
+				<div class="m-ft-foothtml">
+			<div id="set_foothtml"></div>
+		</div>
+				<!-- 脚部自定义模块 end -->
+		<!-- 脚部菜单 -->
+				<div class="m-ft-nav" id="set_footmenu">
+																	<a href="http://seecat.cc/news.html">新闻中心</a>
+																										<a href="http://seecat.cc/group.html">服务项目</a>
+																										<a href="http://seecat.cc/job.html">招聘中心</a>
+																										<a href="http://seecat.cc/friendlink.html">友情链接</a>
+														</div>
+				<!-- 脚部菜单 end -->
+		<!-- 脚部信息 -->
+		<div class="m-ft-text">
+						<span id="set_copyright">copyright ©2016 Seecat儿童摄影</span>
+									<span id="set_beian"><a target="_blank" href="http://www.miitbeian.gov.cn/"></a>&nbsp;&nbsp;&nbsp;</span>
+									<span id="set_telphone">15338828225&nbsp;&nbsp;&nbsp;</span>
+									<span id="set_address">深圳福田华强北深纺大厦8楼806&nbsp;&nbsp;&nbsp;</span>
+									<span id="set_manage"><a href="http://seecat.cc/yunadmin/login.php">后台管理</a></span>
+					</div>
+		<!-- 脚部信息 end -->
+	</div>
+	<!-- 脚部980 end -->
+</footer>
+<!-- 脚部 end -->
+</div>
+<!-- 拖拽JS -->
+<!-- 脚部功能插件 -->
+<!-- 底部插件注入区 -->
+<center></center>
+
+<bgsound src="" loop="-1">
+
+</body></html>
